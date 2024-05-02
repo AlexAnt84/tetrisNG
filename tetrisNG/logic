@@ -1,0 +1,1 @@
+QUIT or (KEYDOWN and (K_ESCAPE or K_Q)
