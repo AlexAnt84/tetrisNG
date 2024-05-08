@@ -2,10 +2,12 @@
 # Import section
 #__init__
 import pygame as pg
+# Graphics
+from graphics import *
 # Key sequences
-from keycodes import quit_seq
+from keycodes import *
 # Settings
-from settings import window_size
+from settings import *
 ################
 
 
@@ -14,12 +16,13 @@ from settings import window_size
 pg_display = pg.display
 ################
 
-
-def pg_window():
+def pg_window(to_draw):
     pg_display.init()
     pg_display.set_mode(window_size)
+#    pg_display.update(to_draw)
     pg_display.update()
     pg_watchdog()
+    return 0
 
 
 def pg_watchdog():
@@ -30,8 +33,8 @@ def pg_watchdog():
             if event.type == quit_seq:
                 pg.quit()
                 return 0
-            
-        pg_display.flip
+        #     
+        #pg_display.flip
 
 if __name__ == '__main__':
-    pg_window()
+    pg_window(to_draw=pg_surface)
