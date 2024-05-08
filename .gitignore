@@ -13,3 +13,7 @@ tetrisNG/.vs/tetrisNG/FileContentIndex/e91934f2-d712-44bc-8ed3-d810a2034546.vsid
 tetrisNG/.vs/tetrisNG/FileContentIndex/3529a935-8f33-46da-af48-cb2f3d2e74e2.vsidx
 tetrisNG/.vs/tetrisNG/FileContentIndex/27451b77-94f7-4b63-9edb-975b27320a80.vsidx
 tetrisNG/.vs/tetrisNG/FileContentIndex/20435e52-42b8-4136-a7b1-c9cb2f36dabe.vsidx
+*.vsidx
+tetrisNG/__pycache__/settings.cpython-312.pyc
+tetrisNG/__pycache__/main.cpython-312.pyc
+tetrisNG/__pycache__/graphics.cpython-312.pyc
