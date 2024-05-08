@@ -20,7 +20,7 @@ pg_display = pg.display
 
 def pg_window():
     pg_display.init()
-    pg_display.set_mode(window_size)
+    pg_display.set_mode(WINDOW_SIZE)
     surface_init()
     pg_display.update()
     pg_watchdog()

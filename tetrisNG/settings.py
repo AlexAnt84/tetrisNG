@@ -1,2 +1,4 @@
 # Window size params
-window_size = (1024, 768)
+WINDOW_WIDTH = 1024
+WINDOW_HEIGHT = 768
+WINDOW_SIZE = (WINDOW_WIDTH, WINDOW_HEIGHT)
