@@ -1,4 +1,5 @@
 from ast import main
+import copy
 from decimal import Decimal
 from pyclbr import Class
 from main import *
@@ -12,8 +13,8 @@ BLUE = (0,0,255)
 WHITE = (255, 255, 255)
 SCREEN_CENTER = (WINDOW_HEIGHT/2, WINDOW_WIDTH/2)
 
-RECT_SIZE_HEIGHT = 10
-RECT_SIZE_WIDTH = 10
+RECT_SIZE_HEIGHT = 50
+RECT_SIZE_WIDTH = 50
 
 x_coords = 0
 y_coords = 0    
@@ -60,6 +61,11 @@ class Rectangle:
 # Rect Init
 #
 blue_block = Rectangle(BLUE, 125, 125)
+red_block = copy.deepcopy(blue_block)
+red_block.color = RED
+red_block.x = 200
+
+red_block.draw()
 blue_block.draw()
     
 #main_rect = pg.draw.rect(main_surface,BLUE,(x_coords,y_coords,RECT_SIZE_WIDTH, RECT_SIZE_HEIGHT))
