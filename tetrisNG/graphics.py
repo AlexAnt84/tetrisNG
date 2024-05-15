@@ -39,10 +39,10 @@ main_surface.set_alpha(200)
 #################
 # Class Rectangle. Prototype Pattern
 class Rectangle:
-    def __init__(self, color, x, y):
+    def __init__(self, color, pos_x, pos_y):
         self.color = color
-        self.x = x
-        self.y = y
+        self.pos_x = pos_x
+        self.pos_y = pos_y
         self.width = RECT_SIZE_WIDTH
         self.height = RECT_SIZE_HEIGHT
         
@@ -55,74 +55,101 @@ class Rectangle:
 #################
 # Class Tetramino
 class Tetramino:
-    def __init__ (self, tetramino, color):
-        match tetramino:
-            case self.I:
-            #######
-            #    
-            #  X  
-            #  X
-            #  X
-            #  X    
-            #
+    def __init__ (self, tetramino, color, pos_x, pos_y):
+        
+        block_prototype = Rectangle(self.color,self.pos_x, self.pos_y)
+        
+        match self.tetramino:
+            case self.I: 
+                l_block_1 = copy.deepcopy(block_prototype)
+                l_block_2 = copy.deepcopy(block_prototype)
+                l_block_3 = copy.deepcopy(block_prototype)
+                l_block_4 = copy.deepcopy(block_prototype)
+                                
+                #######
+                #    
+                # 1 X  
+                # 2 X
+                # 3 X
+                # 4 X   
+                #   
+                #######
+                
+                l_blocks = list()
+                
+                for i in range(1,4):
+                    l_blocks.append("l_block_" + i)
+                
+                print (l_blocks)
+                   
             case self.J:
-            #######
-            # 
-            #   X
-            #   X
-            #  XX
-            #    
+                #######
+                # 
+                #   X
+                #   X
+                #  XX
+                #
+                #######
+                pass
+            
             case self.L:
-            #######
-            #
-            #
-            #  X
-            #  X
-            #  XX
-            #    
+                #######
+                #
+                #
+                #  X
+                #  X
+                #  XX
+                #
+                ########
+                pass
+                    
             case self.O:
-            #######
-            #
-            #
-            #  XX
-            #  XX
-            #
-            #    
+                #######
+                #
+                #
+                #  XX
+                #  XX
+                #
+                #######
+                pass    
                 
             case self.S:
-            #######
-            #
-            #
-            #  XX
-            # XX
-            #    
-                
+                #######
+                #
+                #
+                #  XX
+                # XX
+                #    
+                #######
+                pass
+            
             case self.T:
-            #######
-            #
-            #
-            # XXX
-            #  X
-            # 
-            #         
+                #######
+                #
+                #
+                # XXX
+                #  X
+                # 
+                #######
+                pass
+                
             case self.Z:
-            #######
-            #
-            #
-            #  XX
-            #   XX
-            # 
-            #    
+                #######
+                #
+                #
+                # XX
+                #  XX
+                # 
+                #######
+                pass
          
 
-    
-class Figure:
-    def __init__(self, pos_x, pos_y, type):
+
         
 
 
 ################
-# Figure
+# Testing purposes
 #
 block_prototype = Rectangle(BLUE, 125, 125)
 
@@ -134,7 +161,6 @@ red_block.x = 200
 red_block.draw()
 block_prototype.draw()
     
-
 ###############
 
 
