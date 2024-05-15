@@ -2,6 +2,7 @@ from ast import main
 import copy
 from decimal import Decimal
 from pyclbr import Class
+from typing import Self
 from main import *
 from settings import *
 import sys
@@ -36,39 +37,104 @@ main_surface.set_alpha(200)
 ################
 
 #################
-# Class Rectangle
+# Class Rectangle. Prototype Pattern
 class Rectangle:
     def __init__(self, color, x, y):
-#        self.surface = surface
         self.color = color
         self.x = x
         self.y = y
         self.width = RECT_SIZE_WIDTH
         self.height = RECT_SIZE_HEIGHT
-       
         
-#    def __str__(self) -> str:
-#        return f'{self.color} rect appears at {self.x},{self.y}. Width {self.width}, Height {self.height}'
+
         
     def draw(self):
-        print (f'{self.color} rect appears at {self.x},{self.y}. Width {self.width}, Height {self.height}')
+        print (f'NEW {self.color} rect appears at {self.x},{self.y}. Width {self.width}, Height {self.height}')
         return pg.draw.rect(main_surface, self.color, (self.x,self.y, self.width,self.height))
 
+#################
+# Class Tetramino
+class Tetramino:
+    def __init__ (self, tetramino, color):
+        match tetramino:
+            case self.I:
+            #######
+            #    
+            #  X  
+            #  X
+            #  X
+            #  X    
+            #
+            case self.J:
+            #######
+            # 
+            #   X
+            #   X
+            #  XX
+            #    
+            case self.L:
+            #######
+            #
+            #
+            #  X
+            #  X
+            #  XX
+            #    
+            case self.O:
+            #######
+            #
+            #
+            #  XX
+            #  XX
+            #
+            #    
+                
+            case self.S:
+            #######
+            #
+            #
+            #  XX
+            # XX
+            #    
+                
+            case self.T:
+            #######
+            #
+            #
+            # XXX
+            #  X
+            # 
+            #         
+            case self.Z:
+            #######
+            #
+            #
+            #  XX
+            #   XX
+            # 
+            #    
+         
 
+    
+class Figure:
+    def __init__(self, pos_x, pos_y, type):
+        
 
 
 ################
-# Rect Init
+# Figure
 #
-blue_block = Rectangle(BLUE, 125, 125)
-red_block = copy.deepcopy(blue_block)
+block_prototype = Rectangle(BLUE, 125, 125)
+
+
+red_block = copy.deepcopy(block_prototype)
 red_block.color = RED
 red_block.x = 200
 
 red_block.draw()
-blue_block.draw()
+block_prototype.draw()
     
-#main_rect = pg.draw.rect(main_surface,BLUE,(x_coords,y_coords,RECT_SIZE_WIDTH, RECT_SIZE_HEIGHT))
+
 ###############
 
 
